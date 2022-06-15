@@ -1,6 +1,8 @@
 #include <stdio.h>
-void prime(int n) {
-    int i, count;
+void prime() {
+    int n, i, count;
+    printf("Enter n: ");
+    scanf("%d", &n);
     for(i = 1; i <= n/2; i++) {
        if(n%i == 0) {
            count++;
@@ -10,8 +12,10 @@ void prime(int n) {
     else printf("%d is not a Prime\n\n", n);
 }
 
-void findMaxMin(int n) {
-    int remainder, min, max;
+void findMaxMin() {
+    int remainder, min, max, n;
+    printf("Enter digit: ");
+    scanf("%d", &n);
     remainder = n % 10;
     n = n / 10;
     min = max = remainder;
@@ -35,16 +39,12 @@ int main() {
     switch (n) {
     case 1:
         printf("\nYou have selected 1!\n");
-        printf("Enter n: ");
-        scanf("%d", &n);
-        prime(n);
+        prime();
         main();
         break;
     case 2:
         printf("\nYou have selected 2!\n");
-        printf("Enter digit: ");
-        scanf("%d", &n);
-        findMaxMin(n);
+        findMaxMin();
         main();
         break;
     case 3:
